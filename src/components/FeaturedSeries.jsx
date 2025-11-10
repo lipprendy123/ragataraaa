@@ -1,17 +1,28 @@
-"use client"
-import { useNavigate } from "react-router-dom"
-import { motion } from "framer-motion"
-import SeriesCard from "./SeriesCard"
-import { seriesData } from "../data/seriesData"
+'use client';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Swal from 'sweetalert2';
+import SeriesCard from './SeriesCard';
+import { seriesData } from '../data/seriesData';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-}
+};
 
 export default function FeaturedSeries() {
-  const navigate = useNavigate()
-  const featured = seriesData.slice(0, 6)
+  const navigate = useNavigate();
+  const featured = seriesData.slice(0, 6);
+
+  const handleViewAll = () => {
+    Swal.fire({
+      title: 'Coming Soon!',
+      text: 'More series will be available soon. Stay tuned!',
+      icon: 'info',
+      confirmButtonText: 'OK',
+      confirmButtonColor: '#e11d48',
+    });
+  };
 
   return (
     <motion.section
@@ -23,9 +34,12 @@ export default function FeaturedSeries() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center mb-12" variants={fadeInUp}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Featured Series</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            Featured Series
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Dive into our handpicked collection of stunning animated masterpieces
+            Dive into our handpicked collection of stunning animated
+            masterpieces
           </p>
         </motion.div>
 
@@ -55,11 +69,14 @@ export default function FeaturedSeries() {
         </motion.div>
 
         <motion.div className="text-center mt-12" variants={fadeInUp}>
-          <button className="px-8 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-700 transition-colors">
+          <button
+            onClick={handleViewAll}
+            className="px-8 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-700 transition-colors"
+          >
             View All Series
           </button>
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }

@@ -42,7 +42,7 @@ export default function SeriesDetail() {
         {/* Back Button */}
         <motion.button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-rose-600 hover:text-rose-700 mb-8 font-medium"
+          className="flex items-center gap-2 text-rose-600 mt-10 hover:text-rose-700 mb-8 font-medium"
           whileHover={{ x: -4 }}
         >
           <ArrowLeft size={20} />
