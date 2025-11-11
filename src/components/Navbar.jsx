@@ -52,10 +52,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gradient-to-br from-rose-600 to-rose-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
+              <span className="text-white font-bold text-lg">J</span>
             </div>
             <span className="text-xl font-bold text-gray-900 hidden sm:inline">
-              Ragatara
+              Jagatara
             </span>
           </Link>
 
